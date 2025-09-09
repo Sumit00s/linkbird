@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { usePathname } from "next/navigation"
+import Logout from "./logout"
+
 
 // Menu items.
 const Overview_items = [
@@ -155,7 +157,7 @@ export function AppSidebar() {
         <h3 className="text-sm font-semibold">{dummy_user.name}</h3>
         <p className="text-xs text-gray-500">{dummy_user.email}</p>
       </div>
-      <ChevronsUpDown className="w-4 h-4 cursor-pointer"/>
+      <Logout/>
     </SidebarFooter>
     </Sidebar>
   )
