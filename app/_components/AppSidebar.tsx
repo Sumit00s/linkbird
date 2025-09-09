@@ -1,6 +1,6 @@
 "use client"
 
-import { Calendar, FlaskConical, Headphones, Home, House, Inbox, Linkedin, LogOut, Mail, Moon, Search, Settings, SquareActivity, SquareUser, TicketsPlane, UserCog, Workflow } from "lucide-react"
+import { Calendar, ChevronsUpDown, FlaskConical, Headphones, Home, House, Inbox, Linkedin, LogOut, Mail, Moon, Search, Settings, SquareActivity, SquareUser, TicketsPlane, UserCog, Workflow } from "lucide-react"
 
 import {
   Sidebar,
@@ -155,7 +155,7 @@ export function AppSidebar() {
         <h3 className="text-sm font-semibold">{dummy_user.name}</h3>
         <p className="text-xs text-gray-500">{dummy_user.email}</p>
       </div>
-      <LogOut className="w-4 h-4 cursor-pointer"/>
+      <ChevronsUpDown className="w-4 h-4 cursor-pointer"/>
     </SidebarFooter>
     </Sidebar>
   )
