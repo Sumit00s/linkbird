@@ -5,6 +5,7 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 // import { AppSidebar } from "./_components/AppSideBar";
 import { AppSidebar } from "./_components/AppSidebar";
+import BreadScrumb from "./_components/BreadScrumb";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,8 +34,22 @@ export default function RootLayout({
       >
       <SidebarProvider>
         <AppSidebar />
-        <SidebarTrigger />
-        {children}
+          {/* <div className=" h-full bg-amber-400">
+            <SidebarTrigger className=" ml-3 mt-2"/>
+          </div>
+          <BreadScrumb />
+          <main className="mt-9">
+            {children}
+          </main> */}
+          <div className="w-full h-full flex flex-col p-2">
+              <div className=" w-full h-ful flex flex-row">
+                <SidebarTrigger className=" mt-2"/>
+                <BreadScrumb />
+              </div>
+              <main className="p-2">
+                {children}
+              </main>
+          </div>
       </SidebarProvider>
       </body>
     </html>
