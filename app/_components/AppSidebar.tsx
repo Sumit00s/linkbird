@@ -1,3 +1,5 @@
+"use client"
+
 import { Calendar, FlaskConical, Headphones, Home, House, Inbox, Linkedin, LogOut, Mail, Moon, Search, Settings, SquareActivity, SquareUser, TicketsPlane, UserCog, Workflow } from "lucide-react"
 
 import {
@@ -13,6 +15,7 @@ import {
   SidebarFooter,
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { usePathname } from "next/navigation"
 
 // Menu items.
 const Overview_items = [
@@ -72,6 +75,9 @@ const dummy_user = {
 }
 
 export function AppSidebar() {
+
+  const pathname = usePathname();
+
   return (
     <Sidebar>
       <SidebarContent className="bg-white p-2">
@@ -87,7 +93,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {Overview_items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild className=" hover:bg-blue-300">
+                  <SidebarMenuButton asChild className={`hover:bg-blue-300 ${pathname === item.url ? "bg-blue-300": ""}`}>
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -104,7 +110,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {settings_items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild className=" hover:bg-blue-300">
+                  <SidebarMenuButton asChild className={`hover:bg-blue-300 ${pathname === item.url ? "bg-blue-300": ""}`}>
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -121,7 +127,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {admin_panel.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild className=" hover:bg-blue-300">
+                  <SidebarMenuButton asChild className={`hover:bg-blue-300 ${pathname === item.url ? "bg-blue-300": ""}`}>
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
