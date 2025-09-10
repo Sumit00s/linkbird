@@ -74,20 +74,22 @@ export const leads = pgTable("leads",{
     .notNull(),
 })
 
-export const campaigns  = pgTable("campaigns ",{
+export const campaigns = pgTable("campaigns", {
     id: text("id").primaryKey(),
     campaignName: text("campaignName").notNull(),
     bio: text("bio"),
-    Company: text("company"),
+    company: text("company"),
     totalLeads: integer("totalLeads"),
-    successfulLeads: integer("totalLeads"),
+    successfulLeads: integer("successfulLeads"),
     responseRate: integer("responseRate"),
     status: text("status"),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at")
-    .defaultNow()
-    .$onUpdate(() => /* @__PURE__ */ new Date())
-    .notNull(),
-})
+        .defaultNow()
+        .$onUpdate(() => new Date())
+        .notNull(),
+});
+
+
 
 export const schema = {user,session,account,verification,leads,campaigns};
