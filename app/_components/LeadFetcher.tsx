@@ -19,6 +19,9 @@ export default function LeadFetcher(){
             status: lead.status as "Pending" | "Contacted" | "Responded" | "Converted",
             createdAt: lead.createdAt.toISOString(),
             updatedAt: lead.updatedAt.toISOString(),
+            replied: null, // or any default
+            connectionStatus: "Unknown",
+            invitationMessage: "",
             }));
             setLeads(leadsWithDefaults);
         }
