@@ -1,15 +1,19 @@
 import { create } from "zustand";
 
 export type Lead = {
+  replied: any;
+  connectionStatus: string;
+  invitationMessage: string;
   id: string;
   name: string;
-  bio: string;
-  Company: string;
-  campaignName: string;
-  status: "Pending" | "Contacted" | "Responded" | "Converted";
+  bio: string | null;
+  Company: string | null;
+  campaignName: string | null;
+  status: "Pending" | "Contacted" | "Responded" | "Converted" | null;
   createdAt: string;
   updatedAt: string;
 };
+
 
 type LeadState = {
   leads: Lead[];
