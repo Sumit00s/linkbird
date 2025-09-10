@@ -11,12 +11,7 @@ import {
 } from "@/components/ui/card"
 import { Calendar, CheckCircle, TrendingUp } from "lucide-react";
 
-
-interface CampaignPageProps {
-  params: { id: string };
-}
-
-export default async function CampignId({ params }: CampaignPageProps){
+export default async function CampignId({ params }: { params: { id: string } }){
 
     const { id } = params;
     const campaign = await getCampaignById(id);
