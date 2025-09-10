@@ -44,3 +44,4 @@ export const signUp = async (name:string,email:string,password:string) => {
         }
     }
 }
+

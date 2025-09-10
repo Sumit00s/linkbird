@@ -5,6 +5,7 @@ import "./globals.css";
 import { SidebarProvider} from "@/components/ui/sidebar"
 import LayoutWrapper from "./_components/LayoutWrapper";
 import { Toaster } from "@/components/ui/sonner"
+import ReactQueryProvider from "./_components/QueryProvider";
 
 
 const geistSans = Geist({
@@ -32,12 +33,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+      
+      <ReactQueryProvider>
       <SidebarProvider>
         <LayoutWrapper>
             {children}
             <Toaster />
         </LayoutWrapper>
       </SidebarProvider>
+      </ReactQueryProvider>
       </body>
     </html>
   );

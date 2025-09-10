@@ -1,5 +1,10 @@
-export default function Leads(){
+import { getAllLeads } from "@/server/leadActions"
+
+export default async function Leads(){
+
+    const data = await getAllLeads();
+    console.log(data);
     return(
-        <div>Leads Page</div>
+        <div></div>
     )
 }
