@@ -15,10 +15,14 @@ import { useRouter } from "next/navigation"
 export default function(){
     const router = useRouter();
 
-    const handleLogout = async()=>{
-        await authClient.signOut()
-        router.push("/login")
-    };
+    const handleLogout = async () => {
+    try {
+      await authClient.signOut(); // BetterAuth logout
+      window.location.href = "/login"; // full reload ensures session cleared
+    } catch (err) {
+      console.error("Logout failed:", err);
+    }
+  };
      
     return (
 
